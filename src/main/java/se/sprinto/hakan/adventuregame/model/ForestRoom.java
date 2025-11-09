@@ -18,3 +18,4 @@ public class ForestRoom implements Room {
     }
 }
 
+/* UI ui--> ui.showMessage(); --> UI-objektet används. Använder sig av UserInterface. */
