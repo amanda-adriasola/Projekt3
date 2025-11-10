@@ -16,7 +16,7 @@ public class Main {
         ui.showMessage("Välkommen till Äventyrsspelet!");
 
         AppInfo appInfo = AppInfo.getInstance();
-        ui.showMessage("version" + appInfo.getVersion() + "author" + appInfo.getAuthor());
+        ui.showMessage("version: " + appInfo.getVersion() + " | " + " author: " + appInfo.getAuthor());
 
 
         String name = ui.getInput("Ange ditt namn:");
