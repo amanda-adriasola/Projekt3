@@ -17,7 +17,7 @@ public class FakeUI implements UI {
 
     @Override
     public void showMessage(String message) {
-
+        // Lämnas tom eftersom vi inte behöver se utskrifter under test
     }
 
 }

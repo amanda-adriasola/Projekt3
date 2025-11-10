@@ -36,10 +36,10 @@ public class AppInfo {
         }
     }
     public String getAuthor () {
-        return properties.getProperty("author");
+        return properties.getProperty("app.author");
     }
     public String getVersion () {
-        return properties.getProperty("version");
+        return properties.getProperty("app.version");
     }
 }
 

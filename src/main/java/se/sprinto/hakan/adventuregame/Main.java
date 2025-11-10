@@ -15,21 +15,26 @@ public class Main {
         UI ui = new ScannerUI();
         ui.showMessage("Välkommen till Äventyrsspelet!");
 
-        AppInfo appinfo = AppInfo.getInstance();
-        ui.showMessage("version" + appinfo.getVersion() + "author" + appinfo.getAuthor());
+        AppInfo appInfo = AppInfo.getInstance();
+        ui.showMessage("version" + appInfo.getVersion() + "author" + appInfo.getAuthor());
+
+
         String name = ui.getInput("Ange ditt namn:");
-        Player player = new Player(name, 100, 0, 10);
 
-        new StartRoom().enterRoom(player, ui);
+        Player player = new Player.Builder().name(name).health(100).score(0).strength(10).build();
 
-        StatisticsDao dao = new FileStatisticsDao();
-        dao.save(new Statistics(player.getName(), player.getScore()));
 
-        StatisticsService service = new StatisticsService(dao);
-        ui.showMessage("\n--- Topplista ---");
-        for (Statistics s : service.getSortedStatistics()) {
+            new StartRoom().enterRoom(player, ui);
+
+            StatisticsDao dao = new FileStatisticsDao();
+            dao.save(new Statistics (player.getName(), player.getScore()));
+
+            StatisticsService service = new StatisticsService(dao);
+            ui.showMessage("\n-- Topplista --");
+            for (Statistics s: service.getSortedStatistics()) {
             ui.showMessage(s.getPlayerName() + " - " + s.getScore() + " poäng");
         }
+
     }
 }
 
