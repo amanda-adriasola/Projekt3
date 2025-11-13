@@ -5,13 +5,14 @@ import se.sprinto.hakan.adventuregame.dao.StatisticsDao;
 import se.sprinto.hakan.adventuregame.model.Player;
 import se.sprinto.hakan.adventuregame.model.StartRoom;
 import se.sprinto.hakan.adventuregame.model.Statistics;
-import se.sprinto.hakan.adventuregame.service.StatisticsService;
 import se.sprinto.hakan.adventuregame.view.ScannerUI;
+import se.sprinto.hakan.adventuregame.service.StatisticsService;
 import se.sprinto.hakan.adventuregame.view.UI;
 
 public class Main {
 
     public static void main(String[] args) {
+
         UI ui = new ScannerUI();
         ui.showMessage("Välkommen till Äventyrsspelet!");
 

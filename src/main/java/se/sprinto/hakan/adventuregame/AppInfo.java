@@ -26,7 +26,7 @@ public class AppInfo {
     private void loadProperties() {
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("app.properties")) {
             if (input == null) {
-                System.err.println("Couldn't find app.properties");
+                System.err.println("Går ej att hitta app.properties");
                 return;
             }
             properties.load(input);
